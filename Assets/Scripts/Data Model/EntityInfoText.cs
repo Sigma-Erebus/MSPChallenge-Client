@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 namespace MSP2050.Scripts
 {
@@ -6,7 +7,7 @@ namespace MSP2050.Scripts
 	{
 		private readonly EntityInfoTextConfig config;
 		private readonly GameObject rootTextObject;
-		private readonly TextMesh textMesh;
+		private readonly TMP_Text textMesh;
 		private readonly Renderer textRenderer;
 		private readonly SubEntity ownerSubEntity;
 
@@ -32,9 +33,9 @@ namespace MSP2050.Scripts
 
 			SetPosition(rootTextObject.transform.position, true);
 
-			textMesh = rootTextObject.AddComponent<TextMesh>();
+			textMesh = rootTextObject.AddComponent<TMP_Text>();
 			textMesh.anchor = TextAnchor.MiddleCenter;
-			textMesh.alignment = TextAlignment.Center;
+			textMesh.alignment = TextAlignmentOptions.Center;
 			textMesh.text = GetTextTypeText();
 			textMesh.font = config.TextFont;
 			textMesh.fontSize = info.GetTextSize();
